@@ -114,6 +114,40 @@ const Navbar = () => {
 };
 
 const Hero = () => {
+  const fullName = 'KING VOEUN';
+  const [displayedName, setDisplayedName] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    let timeoutMs = isDeleting ? 120 : 170;
+
+    if (!isDeleting && displayedName === fullName) {
+      timeoutMs = 1800;
+    } else if (isDeleting && displayedName === '') {
+      timeoutMs = 700;
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      if (!isDeleting && displayedName === fullName) {
+        setIsDeleting(true);
+        return;
+      }
+
+      if (isDeleting && displayedName === '') {
+        setIsDeleting(false);
+        return;
+      }
+
+      const nextText = isDeleting
+        ? fullName.slice(0, displayedName.length - 1)
+        : fullName.slice(0, displayedName.length + 1);
+
+      setDisplayedName(nextText);
+    }, timeoutMs);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [displayedName, isDeleting, fullName]);
+
   return (
     <section className="relative pt-32 pb-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
@@ -237,7 +271,11 @@ const Hero = () => {
         </motion.div>
 
         <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 mb-6 leading-tight">
-          Crafting <span className="text-primary">Seamless</span> Digital Experiences
+          Hi! I'm{' '}
+          <span className="text-primary inline-flex items-baseline">
+            <span className="inline-block text-left whitespace-pre">{displayedName}</span>
+            <span className="typing-caret" aria-hidden="true"></span>
+          </span>
         </h1>
 
         <motion.p 
@@ -428,27 +466,34 @@ const About = () => {
 };
 
 const getToolLogo = (tool: string) => {
-  const logos: { [key: string]: React.ReactElement } = {
-    'React': () => <span className="text-blue-400 font-bold text-sm">⚛️</span>,
-    'Next.js': () => <span className="text-black font-bold text-sm">▲</span>,
-    'TypeScript': () => <span className="text-blue-600 font-bold text-sm">TS</span>,
-    'Tailwind CSS': () => <span className="text-cyan-500 font-bold text-sm">🎨</span>,
-    'Framer Motion': () => <span className="text-purple-500 font-bold text-sm">🎬</span>,
-    'Node.js': () => <span className="text-green-600 font-bold text-sm">🟢</span>,
-    'PostgreSQL': () => <span className="text-blue-700 font-bold text-sm">🐘</span>,
-    'GraphQL': () => <span className="text-pink-600 font-bold text-sm">◈</span>,
-    'Redis': () => <span className="text-red-600 font-bold text-sm">🔴</span>,
-    'Docker': () => <span className="text-blue-500 font-bold text-sm">🐳</span>,
-    'Figma': () => <span className="text-purple-600 font-bold text-sm">🎨</span>,
-    'Adobe XD': () => <span className="text-pink-500 font-bold text-sm">XD</span>,
-    'Git': () => <span className="text-orange-600 font-bold text-sm">📦</span>,
-    'CI/CD': () => <span className="text-indigo-600 font-bold text-sm">🔄</span>
+  const logos: Record<string, string> = {
+    'React': 'https://cdn.simpleicons.org/react/61DAFB',
+    'Next.js': 'https://cdn.simpleicons.org/nextdotjs/111827',
+    'TypeScript': 'https://cdn.simpleicons.org/typescript/3178C6',
+    'Tailwind CSS': 'https://cdn.simpleicons.org/tailwindcss/06B6D4',
+    'Framer Motion': 'https://cdn.simpleicons.org/framer/0055FF',
+    'Node.js': 'https://cdn.simpleicons.org/nodedotjs/339933',
+    'PostgreSQL': 'https://cdn.simpleicons.org/postgresql/4169E1',
+    'GraphQL': 'https://cdn.simpleicons.org/graphql/E10098',
+    'Redis': 'https://cdn.simpleicons.org/redis/DC382D',
+    'Docker': 'https://cdn.simpleicons.org/docker/2496ED',
+    'Figma': 'https://cdn.simpleicons.org/figma/F24E1E',
+    'Adobe XD': 'https://cdn.simpleicons.org/adobexd/FF61F6',
+    'Git': 'https://cdn.simpleicons.org/git/F05032',
+    'CI/CD': 'https://cdn.simpleicons.org/githubactions/2088FF'
   };
-  
-  const LogoComponent = logos[tool] || (() => <span className="text-gray-400 text-sm">📁</span>);
-  return <LogoComponent />;
-};
 
+  const logoSrc = logos[tool] || 'https://cdn.simpleicons.org/simpleicons/64748B';
+  return (
+    <img
+      src={logoSrc}
+      alt={`${tool} logo`}
+      className="h-4 w-4"
+      loading="lazy"
+      referrerPolicy="no-referrer"
+    />
+  );
+};
 const Education = () => {
   const education = [
     {
@@ -585,18 +630,24 @@ const Expertise = () => {
   const skills = [
     {
       title: 'Frontend',
-      icon: <Code2 className="w-6 h-6 text-primary" />,
-      tags: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion']
+      icon: <Code2 className="w-7 h-7 text-primary" />,
+      tags: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+      summary: 'Building fast, accessible interfaces with modern component architecture.',
+      gradient: 'from-cyan-500/20 via-sky-500/10 to-transparent'
     },
     {
       title: 'Backend',
-      icon: <Database className="w-6 h-6 text-primary" />,
-      tags: ['Node.js', 'PostgreSQL', 'GraphQL', 'Redis', 'Docker']
+      icon: <Database className="w-7 h-7 text-primary" />,
+      tags: ['Node.js', 'PostgreSQL', 'GraphQL', 'Redis', 'Docker'],
+      summary: 'Designing scalable APIs, data models, and high-throughput services.',
+      gradient: 'from-emerald-500/20 via-teal-500/10 to-transparent'
     },
     {
       title: 'Design & Tools',
-      icon: <Palette className="w-6 h-6 text-primary" />,
-      tags: ['Figma', 'Adobe XD', 'Git', 'CI/CD']
+      icon: <Palette className="w-7 h-7 text-primary" />,
+      tags: ['Figma', 'Adobe XD', 'Git', 'CI/CD'],
+      summary: 'Crafting polished workflows from visual systems to reliable delivery.',
+      gradient: 'from-violet-500/20 via-fuchsia-500/10 to-transparent'
     }
   ];
 
@@ -629,24 +680,40 @@ const Expertise = () => {
         <div className="text-center mb-16">
           <span className="text-primary font-bold text-xs uppercase tracking-[0.2em] mb-4 block">Expertise</span>
           <h2 className="text-4xl font-bold text-slate-900">Technical Arsenal</h2>
+          <p className="text-slate-600 mt-4 max-w-2xl mx-auto">
+            Core technologies I use to ship reliable products end-to-end.
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-24">
-          {skills.map((skill) => (
-            <div key={skill.title} className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-slate-50 rounded-xl flex items-center justify-center mb-6">
+          {skills.map((skill, index) => (
+            <motion.div
+              key={skill.title}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.45, delay: index * 0.08 }}
+              whileHover={{ y: -6 }}
+              className="group relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white/95 p-10 md:p-11 min-h-[380px] shadow-[0_16px_45px_-30px_rgba(15,23,42,0.55)] transition-all duration-300 hover:shadow-[0_22px_60px_-28px_rgba(2,132,199,0.38)]"
+            >
+              <div className={`pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b ${skill.gradient}`} />
+              <div className="relative w-16 h-16 bg-white rounded-2xl border border-slate-200/70 shadow-sm flex items-center justify-center mb-8 mx-auto group-hover:scale-105 transition-transform">
                 {skill.icon}
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-6">{skill.title}</h3>
-              <div className="flex flex-wrap gap-2">
+              <h3 className="relative text-3xl font-bold text-slate-900 mb-3 text-center">{skill.title}</h3>
+              <p className="relative text-base text-slate-600 leading-relaxed mb-7 text-center">{skill.summary}</p>
+              <div className="relative flex flex-wrap gap-3 justify-center">
                 {skill.tags.map(tag => (
-                  <div key={tag} className="px-3 py-2 bg-slate-100 text-slate-600 rounded-full text-xs font-medium flex items-center gap-2">
-                    {getToolLogo(tag)}
-                    {tag}
+                  <div
+                    key={tag}
+                    className="tech-pill"
+                  >
+                    <span className="tech-pill-logo">{getToolLogo(tag)}</span>
+                    <span>{tag}</span>
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
@@ -976,3 +1043,4 @@ export default function App() {
     </div>
   );
 }
+
