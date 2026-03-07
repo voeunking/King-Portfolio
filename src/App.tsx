@@ -302,9 +302,15 @@ const Hero = () => {
             View My Work
           </a>
           <div className="flex gap-3">
-            <button className="p-3 rounded-lg border border-slate-200 hover:border-primary hover:text-primary transition-all">
+            <a
+              href="https://www.linkedin.com/in/king-voeun-01595b3a0/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-lg border border-slate-200 hover:border-primary hover:text-primary transition-all"
+              aria-label="Visit my LinkedIn profile"
+            >
               <Globe className="w-5 h-5" />
-            </button>
+            </a>
             <a
               href="https://www.linkedin.com/in/king-voeun-01595b3a0/"
               target="_blank"
@@ -470,6 +476,9 @@ const getToolLogo = (tool: string) => {
     'React': 'https://cdn.simpleicons.org/react/61DAFB',
     'Next.js': 'https://cdn.simpleicons.org/nextdotjs/111827',
     'TypeScript': 'https://cdn.simpleicons.org/typescript/3178C6',
+    'CSS': 'https://cdn.simpleicons.org/css/1572B6',
+    'Sass': 'https://cdn.simpleicons.org/sass/CC6699',
+    'Bootstrap': 'https://cdn.simpleicons.org/bootstrap/7952B3',
     'Tailwind CSS': 'https://cdn.simpleicons.org/tailwindcss/06B6D4',
     'Framer Motion': 'https://cdn.simpleicons.org/framer/0055FF',
     'Node.js': 'https://cdn.simpleicons.org/nodedotjs/339933',
@@ -480,7 +489,24 @@ const getToolLogo = (tool: string) => {
     'Figma': 'https://cdn.simpleicons.org/figma/F24E1E',
     'Adobe XD': 'https://cdn.simpleicons.org/adobexd/FF61F6',
     'Git': 'https://cdn.simpleicons.org/git/F05032',
-    'CI/CD': 'https://cdn.simpleicons.org/githubactions/2088FF'
+    'GitHub': 'https://cdn.simpleicons.org/github/181717',
+    'Jira': 'https://cdn.simpleicons.org/jira/0052CC',
+    'Vercel': 'https://cdn.simpleicons.org/vercel/000000',
+    'Natify': 'https://cdn.simpleicons.org/netlify/00C7B7',
+    'Canva': 'https://cdn.simpleicons.org/canva/00C4CC',
+    'AWS': 'https://cdn.simpleicons.org/amazonwebservices/FF9900',
+    'CI/CD': 'https://cdn.simpleicons.org/githubactions/2088FF',
+    'ChatGPT': 'https://cdn.simpleicons.org/openai/412991',
+    'Grok': 'https://cdn.simpleicons.org/x/000000',
+    'Gemini': 'https://cdn.simpleicons.org/googlegemini/1A73E8',
+    'Windsuf': 'https://cdn.simpleicons.org/windicss/48B0F1',
+    'Sticth': 'https://cdn.simpleicons.org/stitcher/000000',
+    'AI Studio': 'https://cdn.simpleicons.org/google/4285F4',
+    'Antigravity': 'https://cdn.simpleicons.org/rocket/0F172A',
+    'Clude': 'https://cdn.simpleicons.org/claude/CC785C',
+    'Codex': 'https://cdn.simpleicons.org/openai/412991',
+    'Kilo code': 'https://cdn.simpleicons.org/codeforces/1F8ACB',
+    'Deepseek': 'https://cdn.simpleicons.org/deepseek/4F46E5'
   };
 
   const logoSrc = logos[tool] || 'https://cdn.simpleicons.org/simpleicons/64748B';
@@ -631,23 +657,30 @@ const Expertise = () => {
     {
       title: 'Frontend',
       icon: <Code2 className="w-7 h-7 text-primary" />,
-      tags: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+      tags: ['React', 'Next.js', 'TypeScript', 'CSS', 'Sass', 'Bootstrap', 'Tailwind CSS', 'Framer Motion'],
       summary: 'Building fast, accessible interfaces with modern component architecture.',
-      gradient: 'from-cyan-500/20 via-sky-500/10 to-transparent'
+      gradient: ''
     },
     {
       title: 'Backend',
       icon: <Database className="w-7 h-7 text-primary" />,
       tags: ['Node.js', 'PostgreSQL', 'GraphQL', 'Redis', 'Docker'],
       summary: 'Designing scalable APIs, data models, and high-throughput services.',
-      gradient: 'from-emerald-500/20 via-teal-500/10 to-transparent'
+      gradient: ''
     },
     {
       title: 'Design & Tools',
       icon: <Palette className="w-7 h-7 text-primary" />,
-      tags: ['Figma', 'Adobe XD', 'Git', 'CI/CD'],
+      tags: ['Figma', 'Adobe XD', 'Git', 'GitHub', 'Jira', 'Vercel', 'Natify', 'Canva', 'AWS', 'CI/CD'],
       summary: 'Crafting polished workflows from visual systems to reliable delivery.',
-      gradient: 'from-violet-500/20 via-fuchsia-500/10 to-transparent'
+      gradient: ''
+    },
+    {
+      title: 'AI Tools',
+      icon: <Globe className="w-7 h-7 text-primary" />,
+      tags: ['ChatGPT', 'Grok', 'Gemini', 'Windsuf', 'Sticth', 'AI Studio', 'Antigravity', 'Clude', 'Codex', 'Kilo code', 'Deepseek'],
+      summary: 'Using modern AI copilots and studios to speed up ideation, coding, and content workflows.',
+      gradient: ''
     }
   ];
 
@@ -685,7 +718,7 @@ const Expertise = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-24">
+        <div className="grid md:grid-cols-2 gap-8 mb-24">
           {skills.map((skill, index) => (
             <motion.div
               key={skill.title}
@@ -696,7 +729,7 @@ const Expertise = () => {
               whileHover={{ y: -6 }}
               className="group relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white/95 p-10 md:p-11 min-h-[380px] shadow-[0_16px_45px_-30px_rgba(15,23,42,0.55)] transition-all duration-300 hover:shadow-[0_22px_60px_-28px_rgba(2,132,199,0.38)]"
             >
-              <div className={`pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b ${skill.gradient}`} />
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-20" />
               <div className="relative w-16 h-16 bg-white rounded-2xl border border-slate-200/70 shadow-sm flex items-center justify-center mb-8 mx-auto group-hover:scale-105 transition-transform">
                 {skill.icon}
               </div>
