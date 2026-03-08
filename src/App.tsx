@@ -793,36 +793,36 @@ const Projects = () => {
   
   const projects = [
     {
-      title: 'Modern Shop Dashboard',
-      category: 'E-Commerce',
+      title: 'Figma Project',
+      category: 'Leave Management System',
       image: 'https://picsum.photos/seed/shop/800/600',
       desc: 'A high-performance dashboard for managing online stores with real-time analytics.',
       tags: ['Next.js', 'Stripe', 'Prisma']
     },
     {
-      title: 'TaskFlow AI',
-      category: 'Productivity',
+      title: 'Web Design Project',
+      category: 'Ecomerce Web site',
       image: 'https://picsum.photos/seed/task/800/600',
       desc: 'Project management tool integrated with AI for automatic task prioritization.',
       tags: ['OpenAI', 'React', 'Supabase']
     },
     {
-      title: 'Crypto Pulse',
-      category: 'Fintech',
+      title: 'Algorithem Project',
+      category: 'Library Management',
       image: 'https://picsum.photos/seed/crypto/800/600',
       desc: 'Real-time cryptocurrency tracking app with customizable alerts and data charts.',
       tags: ['WebSockets', 'Chart.js', 'Tailwind']
     },
     {
-      title: 'Social Media Analytics',
-      category: 'Analytics',
+      title: 'Javascript Project',
+      category: 'Task Management',
       image: 'https://picsum.photos/seed/analytics/800/600',
       desc: 'Comprehensive analytics platform for social media performance tracking and insights.',
       tags: ['Python', 'TensorFlow', 'React']
     },
     {
-      title: 'E-Learning Platform',
-      category: 'Education',
+      title: 'Git Hub Project',
+      category: 'E-comerce Web site',
       image: 'https://picsum.photos/seed/education/800/600',
       desc: 'Interactive online learning platform with video streaming and quiz functionality.',
       tags: ['Vue.js', 'WebRTC', 'MongoDB']
