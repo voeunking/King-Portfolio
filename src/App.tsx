@@ -813,7 +813,7 @@ const Projects = () => {
      {
        title: 'Web Design Project',
        category: 'Ecommerce Website',
-       image: '../public/image copy.png',
+       image: '../../public/image copy.png',
        desc: 'Responsive e-commerce website design with modern UI/UX principles, product catalog, and shopping cart functionality.',
        tags: ['HTML', 'CSS', 'SASS','figma']
      },
