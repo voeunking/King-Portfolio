@@ -289,7 +289,7 @@ const Hero = () => {
           }}
           className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          I'm a junior Web Developer specialized in building robust backend systems, data-driven applications, and automation solutions.
+          I'm a junior Web Developer specialized in building robust Backend and Frontend systems, data-driven applications, and automation solutions.
         </motion.p>
 
         <motion.div
@@ -525,29 +525,36 @@ const getToolLogo = (tool: string) => {
   );
 };
 const Education = () => {
-  const education = [
-    {
-      degree: 'PNC. Web Development',
-      school: 'Passerellesnumeriques University',
-      period: '2025 - 2026',
-      description: 'Professional certificate in modern web development with focus on full-stack technologies and best practices.',
-      achievements: ['Full-Stack Development', 'Modern Frameworks', 'Database Design', 'API Development']
-    },
-    {
-      degree: 'Associate Degree',
-      school: 'Web Developer Associate',
-      period: '2025 - 2026',
-      description: 'Cloud computing certification with expertise in AWS services, architecture patterns, and deployment strategies.',
-      achievements: ['Cloud Architecture', 'Serverless Computing', 'DevOps Practices', 'Security Best Practices']
-    },
-    {
-      degree: 'High School Diploma',
-      school: 'Hun Sen Trosekong High School',
-      period: '2022 - 2024',
-      description: 'Foundation education with focus on mathematics, computer science, and English language.',
-      achievements: ['Mathematics Excellence', 'Computer Science', 'English Literature', 'Science Olympiad']
-    }
-  ];
+   const education = [
+     {
+       degree: 'PNC. Web Development',
+       school: 'Passerellesnumeriques University',
+       period: '2025 - 2026',
+       description: 'Currently advancing my technical expertise through intensive full-stack web development training, focusing on modern frameworks, database systems, and API development to build a strong foundation for my professional career.',
+       achievements: ['Full-Stack Development', 'Modern Frameworks', 'Database Design', 'API Development']
+     },
+     {
+       degree: 'Associate Degree',
+       school: 'Web Developer Associate',
+       period: '2025 - 2026',
+       description: 'Expanding my knowledge in cloud technologies and deployment strategies, gaining hands-on experience with AWS services and cloud architecture patterns to complement my web development skills.',
+       achievements: []
+     },
+     {
+       degree: 'High School Diploma',
+       school: 'Hun Sen Trosekong High School',
+       period: '2022 - 2024',
+       description: '',
+       achievements: []
+     },
+     {
+       degree: 'Secondary',
+       school: 'Mean Rith Secondary',
+       period: '2019 - 2022',
+       description: '',
+       achievements: []
+     }
+   ];
 
   return (
     <section id="education" className="section-padding bg-slate-50/50">
@@ -795,43 +802,43 @@ const Expertise = () => {
 const Projects = () => {
   const [visibleCount, setVisibleCount] = useState(3);
 
-  const projects = [
-    {
-      title: 'Figma Project',
-      category: 'Leave Management System',
-      image: '../public/image.png',
-      desc: 'A high-performance dashboard for managing online stores with real-time analytics.',
-      tags: ['figma']
-    },
-    {
-      title: 'Web Design Project',
-      category: 'Ecomerce Web site',
-      image: '../public/image copy.png',
-      desc: 'Project management tool integrated with AI for automatic task prioritization.',
-      tags: ['HTML', 'CSS', 'SASS','figma']
-    },
-    {
-      title: 'Algorithem Project',
-      category: 'Library Management',
-      image: '../public/image copy 2.png',
-      desc: 'Real-time cryptocurrency tracking app with customizable alerts and data charts.',
-      tags: ['Python', 'Flask framwork', 'javascript', 'mysql','HTML','CSS','git hub']
-    },
-    {
-      title: 'Javascript Project',
-      category: 'Task Management',
-      image: '../public/image copy 3.png',
-      desc: 'Comprehensive analytics platform for social media performance tracking and insights.',
-      tags: ['HTML', 'CSS', 'Javascript','mysql','github']
-    },
-    {
-      title: ' Virtual Company-I Project',
-      category: 'POS System- Prey Lang Coffee',
-      image: '../public/image copy 4.png',
-      desc: 'Beautiful weather application with location-based forecasts and interactive maps.',
-      tags: ['React', 'Laravel', 'mysql','git hub','figma','Jira']
-    }
-  ];
+   const projects = [
+     {
+       title: 'Figma Project',
+       category: 'UX/UI Design Project',
+       image: '../public/image.png',
+       desc: 'UX/UI design project created in Figma showcasing modern interface design principles and user experience concepts.',
+       tags: ['figma']
+     },
+     {
+       title: 'Web Design Project',
+       category: 'Ecommerce Website',
+       image: '../public/image copy.png',
+       desc: 'Responsive e-commerce website design with modern UI/UX principles, product catalog, and shopping cart functionality.',
+       tags: ['HTML', 'CSS', 'SASS','figma']
+     },
+     {
+       title: 'Algorithem Project',
+       category: 'Algorithm Implementation',
+       image: '../public/image copy 2.png',
+       desc: 'Collection of algorithm implementations and data structures demonstrating problem-solving techniques and computational thinking.',
+       tags: ['Python', 'Flask framwork', 'javascript', 'mysql','HTML','CSS','git hub']
+     },
+     {
+       title: 'Javascript Project',
+       category: 'Interactive Web Application',
+       image: '../public/image copy 3.png',
+       desc: 'Dynamic JavaScript project featuring interactive elements, DOM manipulation, and modern ES6+ functionality.',
+       tags: ['HTML', 'CSS', 'Javascript','mysql','github']
+     },
+     {
+       title: ' Virtual Company-I Project',
+       category: 'POS System- Prey Lang Coffee',
+       image: '../public/image copy 4.png',
+       desc: 'Point of Sale system for Prey Lang Coffee business with inventory management, sales tracking, and customer management features.',
+       tags: ['React', 'Laravel', 'mysql','git hub','figma','Jira']
+     }
+   ];
 
   return (
     <section id="projects" className="section-padding">
