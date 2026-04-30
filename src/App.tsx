@@ -65,13 +65,13 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <a
-            href="/public/KING VOEUN CV Resume.pdf"
-            download="KING VOEUN CV Resume.pdf"
-            className="bg-primary text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-primary-dark transition-all shadow-md shadow-primary/20"
-          >
-            Downlaod Resume
-          </a>
+           <a
+             href="/KING VOEUN CV Resume.pdf"
+             download="KING VOEUN CV Resume.pdf"
+             className="bg-primary text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-primary-dark transition-all shadow-md shadow-primary/20"
+           >
+             Download Resume
+           </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -99,13 +99,13 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <a
-              href="/Sreyneang-Louen-CV.pdf"
-              download="Sreyneang-Louen-CV.pdf"
-              className="bg-primary text-white w-full py-3 rounded-lg font-semibold text-center"
-            >
-              Resume
-            </a>
+             <a
+               href="/KING VOEUN CV Resume.pdf"
+               download="KING VOEUN CV Resume.pdf"
+               className="bg-primary text-white w-full py-3 rounded-lg font-semibold text-center"
+             >
+               Resume
+             </a>
           </motion.div>
         )}
       </AnimatePresence>
@@ -802,43 +802,43 @@ const Expertise = () => {
 const Projects = () => {
   const [visibleCount, setVisibleCount] = useState(3);
 
-   const projects = [
-     {
-       title: 'Figma Project',
-       category: 'UX/UI Design Project',
-       image: '../public/image.png',
-       desc: 'UX/UI design project created in Figma showcasing modern interface design principles and user experience concepts.',
-       tags: ['figma']
-     },
-     {
-       title: 'Web Design Project',
-       category: 'Ecommerce Website',
-       image: '../public/image copy.png',
-       desc: 'Responsive e-commerce website design with modern UI/UX principles, product catalog, and shopping cart functionality.',
-       tags: ['HTML', 'CSS', 'SASS','figma']
-     },
-     {
-       title: 'Algorithem Project',
-       category: 'Algorithm Implementation',
-       image: '../public/image copy 2.png',
-       desc: 'Collection of algorithm implementations and data structures demonstrating problem-solving techniques and computational thinking.',
-       tags: ['Python', 'Flask framwork', 'javascript', 'mysql','HTML','CSS','git hub']
-     },
-     {
-       title: 'Javascript Project',
-       category: 'Interactive Web Application',
-       image: '../public/image copy 3.png',
-       desc: 'Dynamic JavaScript project featuring interactive elements, DOM manipulation, and modern ES6+ functionality.',
-       tags: ['HTML', 'CSS', 'Javascript','mysql','github']
-     },
-     {
-       title: ' Virtual Company-I Project',
-       category: 'POS System- Prey Lang Coffee',
-       image: '../public/image copy 4.png',
-       desc: 'Point of Sale system for Prey Lang Coffee business with inventory management, sales tracking, and customer management features.',
-       tags: ['React', 'Laravel', 'mysql','git hub','figma','Jira']
-     }
-   ];
+    const projects = [
+      {
+        title: 'Figma Project',
+        category: 'UX/UI Design Project',
+        image: '/image.png',
+        desc: 'UX/UI design project created in Figma showcasing modern interface design principles and user experience concepts.',
+        tags: ['figma']
+      },
+      {
+        title: 'Web Design Project',
+        category: 'Ecommerce Website',
+        image: '/image copy.png',
+        desc: 'Responsive e-commerce website design with modern UI/UX principles, product catalog, and shopping cart functionality.',
+        tags: ['HTML', 'CSS', 'SASS','figma']
+      },
+      {
+        title: 'Algorithem Project',
+        category: 'Algorithm Implementation',
+        image: '/image copy 2.png',
+        desc: 'Collection of algorithm implementations and data structures demonstrating problem-solving techniques and computational thinking.',
+        tags: ['Python', 'Flask framwork', 'javascript', 'mysql','HTML','CSS','git hub']
+      },
+      {
+        title: 'Javascript Project',
+        category: 'Interactive Web Application',
+        image: '/image copy 3.png',
+        desc: 'Dynamic JavaScript project featuring interactive elements, DOM manipulation, and modern ES6+ functionality.',
+        tags: ['HTML', 'CSS', 'Javascript','mysql','github']
+      },
+      {
+        title: ' Virtual Company-I Project',
+        category: 'POS System- Prey Lang Coffee',
+        image: '/image copy 4.png',
+        desc: 'Point of Sale system for Prey Lang Coffee business with inventory management, sales tracking, and customer management features.',
+        tags: ['React', 'Laravel', 'mysql','git hub','figma','Jira']
+      }
+    ];
 
   return (
     <section id="projects" className="section-padding">
