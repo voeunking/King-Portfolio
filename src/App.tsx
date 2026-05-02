@@ -288,8 +288,13 @@ const Hero = () => {
             x: { duration: 7, repeat: Infinity, ease: "easeInOut" }
           }}
           className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed"
-        >
-          I'm a junior Web Developer specialized in building robust Backend and Frontend systems, data-driven applications, and automation solutions.
+        > 
+        Frontend & Full-Stack Developer  
+
+        I build modern web applications using React, Laravel, and MySQL.  
+        Passionate about creating real-world systems like POS and business tools.
+
+         Currently looking for an internship opportunity.
         </motion.p>
 
         <motion.div
@@ -413,7 +418,11 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              I am King Voeun, born on Aguest 07, 2005, in Kompot province, Cambodia. I am a second-year Web Programming student at Passerelles Numériques Cambodia, pursuing an Associate Degree. Web Developer with hands-on experience in both front-end and back-end development. . Proficient in HTML, CSS, JavaScript, PHP, and frameworks like Bootstrap, Laravel, and Vue.js. Skilled in MySQL, and OOP in TypeScript. Focused on user experience, teamwork, and delivering quality results.
+              I am King Voeun, born on Aguest 07, 2005, in Kompot province, Cambodia. I am a web development student with a strong interest in building practical and user-friendly applications.
+
+I have experience working with technologies like React.js, Laravel, MySQL, and Figma. I enjoy turning ideas into real systems, such as POS platforms and management tools.
+
+I am currently improving my frontend and backend skills and looking for an internship where I can contribute and grow as a developer.
             </motion.p>
             <motion.p
               initial={{ opacity: 0 }}
