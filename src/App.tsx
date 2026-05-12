@@ -403,7 +403,7 @@ const About = () => {
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             className="text-4xl font-bold text-slate-900 mb-6 leading-tight"
           >
-            A Python Developer Passionate About Clean Code & Scalable Solutions
+            A Web Developer Passionate About Clean Code & Scalable Solutions
           </motion.h2>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -732,7 +732,7 @@ const Expertise = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-primary font-bold text-xs uppercase tracking-[0.2em] mb-4 block">Expertise</span>
-          <h2 className="text-4xl font-bold text-slate-900">Python Development Stack</h2>
+          <h2 className="text-4xl font-bold text-slate-900">Web Development Stack</h2>
           <p className="text-slate-600 mt-4 max-w-2xl mx-auto">
             Core technologies I use to ship reliable products end-to-end.
           </p>
