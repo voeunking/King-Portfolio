@@ -66,7 +66,7 @@ const Navbar = () => {
             </a>
           ))}
            <a
-             href="/KING VOEUN CV Resume.pdf"
+             href="/KING-VOEUN CV Resume.pdf"
              download="KING VOEUN CV Resume.pdf"
              className="bg-primary text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-primary-dark transition-all shadow-md shadow-primary/20"
            >
